@@ -18,5 +18,4 @@ public class Max {
         int result = condition ? first : max(second, third, fourth);
         return result;
     }
-
 }
