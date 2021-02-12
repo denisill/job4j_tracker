@@ -40,10 +40,7 @@ public class StartUITest {
         Item item = new Item();
         item.setName("new item");
         tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
-                "delete item"
-        };
+        String[] answers = {String.valueOf(item.getId())};
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item deleteItem = tracker.findById(item.getId());
         assertThat(deleteItem, is(nullValue()));
