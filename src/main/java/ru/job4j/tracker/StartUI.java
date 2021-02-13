@@ -70,11 +70,11 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
-            if (select >= 0 && select <= 5) {
+            if (select >= 0 && select <= 6) {
                 UserAction action = actions[select];
                 run = action.execute(input, tracker);
             } else {
-                System.out.println("Выберите пункт от 0 до 5");
+                System.out.println("Выберите пункт от 0 до 6");
             }
 
         }
@@ -96,7 +96,8 @@ public class StartUI {
                 new EditAction(),
                 new DeleteAction(),
                 new FindByIdAction(),
-                new FindByNameAction()
+                new FindByNameAction(),
+                new ExitAction()
         };
         new StartUI().init(input, tracker, actions);
     }
