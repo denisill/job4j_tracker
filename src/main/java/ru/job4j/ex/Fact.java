@@ -9,6 +9,7 @@ public class Fact {
     public static int calc(int n) {
         if (n == 0 || n == 1){
             return 1;
-        } else return calc(n - 1) * n;
+        }
+        return calc(n - 1) * n;
     }
 }
