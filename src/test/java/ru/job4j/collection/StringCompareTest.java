@@ -57,4 +57,14 @@ public class StringCompareTest {
         );
         assertThat(rst, lessThan(0));
     }
+
+    @Test
+    public void whenLeftEqualNull(){
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "",
+                "Ivanov"
+        );
+        assertThat(rst, lessThan(0));
+    }
 }
