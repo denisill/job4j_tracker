@@ -18,6 +18,10 @@ public final class Tracker {
         return instance;
     }
 
+    public static Tracker newTestTracker() {
+        return new Tracker();
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items.add(item);

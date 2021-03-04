@@ -30,7 +30,7 @@ public class StartUITest {
     public void whenShowAll() {
         Output out = new StubOutput();
         Input in = new StubInput(new String[]{"0", "1"});
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = Tracker.newTestTracker();
         Item item0 = new Item();
         item0.setName("New Item");
         Item item = tracker.add(item0);
@@ -55,7 +55,7 @@ public class StartUITest {
         Output out = new StubOutput();
         String findName = "New Item1";
         Input in = new StubInput(new String[]{"0", findName, "1"});
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = Tracker.newTestTracker();
         Item item1 = new Item();
         item1.setName("New Item1");
         tracker.add(item1);
