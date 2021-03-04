@@ -74,7 +74,5 @@ public final class Tracker {
             items.remove(index);
         }
         return result;
-
-
     }
 }

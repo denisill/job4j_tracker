@@ -4,10 +4,10 @@ public class Square implements Shape {
     @Override
     public String draw() {
         String ln = System.lineSeparator();
-        return  " _______" + ln +
-                "|       |" + ln +
-                "|       |" + ln +
-                "|_______|";
+          return  " _______" + ln
+                + "|       |" + ln
+                + "|       |" + ln
+                + "|_______|";
     }
 
     public static void main(String[] args) {

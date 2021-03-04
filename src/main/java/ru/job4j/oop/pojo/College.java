@@ -8,6 +8,8 @@ public class College {
         student.setFullName("Ivanov Ivan Petrovich");
         student.setGroup("2A");
         student.setAdmission(new Date());
-        System.out.println(student.getFullName() + " , " + student.getGroup() + " , " + student.getAdmission());
+        System.out.println(student.getFullName() + " , "
+                + student.getGroup() + " , "
+                + student.getAdmission());
     }
 }

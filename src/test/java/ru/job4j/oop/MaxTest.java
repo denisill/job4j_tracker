@@ -15,7 +15,7 @@ public class MaxTest {
 
     @Test
     public void whenMax7() {
-        int result = Max.max(4, 2 , 7);
+        int result = Max.max(4, 2, 7);
         assertThat(result, is(7));
     }
 
