@@ -16,7 +16,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
@@ -30,7 +30,7 @@ public class StartUITest {
     public void whenShowAll() {
         Output out = new StubOutput();
         Input in = new StubInput(new String[]{"0", "1"});
-        Tracker tracker = Tracker.newTestTracker();
+        Tracker tracker = new Tracker();
         Item item0 = new Item();
         item0.setName("New Item");
         Item item = tracker.add(item0);
@@ -55,7 +55,7 @@ public class StartUITest {
         Output out = new StubOutput();
         String findName = "New Item1";
         Input in = new StubInput(new String[]{"0", findName, "1"});
-        Tracker tracker = Tracker.newTestTracker();
+        Tracker tracker = new Tracker();
         Item item1 = new Item();
         item1.setName("New Item1");
         tracker.add(item1);
@@ -81,7 +81,7 @@ public class StartUITest {
     @Test
     public void whenFindById() {
         Output out = new StubOutput();
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         Item item1 = new Item();
         item1.setName("New Item1");
         tracker.add(item1);
@@ -111,7 +111,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"1", "0"}
         );
-        Tracker tracker = Tracker.getInstance();
+        Tracker tracker = new Tracker();
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
