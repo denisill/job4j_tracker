@@ -19,6 +19,7 @@ notifications:
     on_success: never # default: change
     on_failure: always # default: always
 
+# Используем ключ с сайта https://codecov.io/
 env:
   global:
     - CODECOV_TOKEN="86160488-d8c0-4bf8-805b-15941b49c6de"
