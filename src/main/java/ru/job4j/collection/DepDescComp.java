@@ -5,21 +5,11 @@ import java.util.Comparator;
 public class DepDescComp implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
-        int rsl = 0;
-        for (int i = 0; i < Math.min(o1.length(), o2.length()); i++) {
-            if (i < 2) {
-                rsl = Character.compare(o2.charAt(i), o1.charAt(i));
-                if (rsl != 0) {
-                    break;
-                }
-            }
-            rsl = Character.compare(o1.charAt(i), o2.charAt(i));
-            if (rsl != 0) {
-                break;
-            }
-        }
+        String[] left = o1.split("/");
+        String[] right = o2.split("/");
+        int rsl = right[0].compareTo(left[0]);
         if (rsl == 0) {
-            rsl = Integer.compare(o1.length(), o2.length());
+            rsl = o1.compareTo(o2);
         }
         return rsl;
     }
