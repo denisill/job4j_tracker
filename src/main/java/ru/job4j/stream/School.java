@@ -6,9 +6,8 @@ import java.util.stream.Collectors;
 
 public class School {
     List<Student> collect(List<Student> students, Predicate<Student> predict) {
-        List<Student> rsl = students.stream()
+        return students.stream()
                 .filter(student -> predict.test(student))
                 .collect(Collectors.toList());
-        return rsl;
     }
 }
