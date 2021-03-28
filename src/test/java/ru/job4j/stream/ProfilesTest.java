@@ -10,18 +10,33 @@ import static org.junit.Assert.*;
 
 public class ProfilesTest {
     @Test
-    public void collect() {
+    public void collectAddress() {
         List<Profile> profiles = List.of(
-            new Profile(new Address("Moscow", "Lenina", 11, 17)),
-            new Profile(new Address("Kazan", "Mira", 13, 345)),
-            new Profile(new Address("London", "Central", 23, 130))
+            new Profile(new Address("Amsterdam", "Lenina", 11, 17)),
+            new Profile(new Address("Moscow", "Mira", 13, 345))
         );
         Profiles profs = new Profiles();
         List<Address> rsl = profs.collect(profiles);
         List<Address> expected = new ArrayList<>();
-        expected.add(new Address("Moscow", "Lenina", 11, 17));
-        expected.add(new Address("Kazan", "Mira", 13, 345));
-        expected.add(new Address("London", "Central", 23, 130));
+        expected.add(new Address("Amsterdam", "Lenina", 11, 17));
+        expected.add(new Address("Moscow", "Mira", 13, 345));
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
+    public void whenDistinctAddress() {
+        List<Profile> profiles = List.of(
+                new Profile(new Address("Amsterdam", "Lenina", 11, 17)),
+                new Profile(new Address("Moscow", "Mira", 13, 345)),
+                new Profile(new Address("Bari", "Street", 74, 123)),
+                new Profile(new Address("Amsterdam", "Lenina", 11, 17))
+        );
+        Profiles profs = new Profiles();
+        List<Address> rsl = profs.collect(profiles);
+        List<Address> expected = new ArrayList<>();
+        expected.add(new Address("Amsterdam", "Lenina", 11, 17));
+        expected.add(new Address("Bari", "Street", 74, 123));
+        expected.add(new Address("Moscow", "Mira", 13, 345));
         assertThat(rsl, is(expected));
     }
 }
