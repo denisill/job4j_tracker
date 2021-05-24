@@ -6,13 +6,16 @@ import java.util.Set;
 
 public class Article {
     public static boolean generateBy(String origin, String line) {
-        String[] originArr = origin.split("[ ,!;:\\.]+");
-        String[] lineArr = line.split("[ ,!;:\\.]+");
+        String originTxt = origin.replaceAll("\\p{P}", "");
+        String [] originArr = originTxt.split(" ");
+        String lineTxt = line.replaceAll("\\p{P}", "");
+        String [] lineArr = lineTxt.split(" ");
         Set<String> setOrigin = new HashSet<>(Arrays.asList(originArr));
-        Set<String> setLine = new HashSet<>(Arrays.asList(lineArr));
-        if (setOrigin.containsAll(setLine)) {
-            return true;
+        for (String str : lineArr) {
+            if (!setOrigin.contains(str)) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }
